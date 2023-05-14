@@ -6,11 +6,12 @@ import com.codeline.sampleProject.Service.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 public class SalaryController {
     @Autowired
     SalaryService salaryService;
@@ -34,6 +35,7 @@ public class SalaryController {
         salary.setDeductions(100.00);
         salary.setCurrency("OMR");
         salary.setHealthCareContribution(50.0);
+        salary.setPerDiem(12.0);
         salaryService.saveSalary(salary);
     }
 
