@@ -27,9 +27,9 @@ public class EmployeeController {
     public void createEmployee() {
 
         Employee employee = new Employee();
-        employee.setName("Abdullah");
+        employee.setName("Moahmmed");
         employee.setGender("Male");
-        employee.setSalary(650.0);
+        employee.setSalary(1200.0);
         employee.setDepartment("IT");
         employee.setCompanyName("TechM");
         employee.setCreatedDate(new Date());
