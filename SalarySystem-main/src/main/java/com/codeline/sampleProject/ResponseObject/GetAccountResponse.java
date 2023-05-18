@@ -14,7 +14,7 @@ public class GetAccountResponse {
 
     String bankName;
 
-    Integer accountNumber;
+    String accountNumber;
 
     String bankBranch;
 }

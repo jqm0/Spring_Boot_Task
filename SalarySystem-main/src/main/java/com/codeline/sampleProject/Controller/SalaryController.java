@@ -2,9 +2,11 @@ package com.codeline.sampleProject.Controller;
 
 import com.codeline.sampleProject.Models.Employee;
 import com.codeline.sampleProject.Models.Salary;
+import com.codeline.sampleProject.ResponseObject.GetSalaryResponse;
 import com.codeline.sampleProject.Service.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +25,12 @@ public class SalaryController {
     public List<Salary> getSalary () {
         return salaryService.getSalary();
     }
+
+    @RequestMapping("salary/get/{salaryId}")
+    public GetSalaryResponse createSalary (@PathVariable Long salaryId)
+    {
+        return salaryService.getSalaryById(salaryId);
+    }
     public void createSalary() {
 
         Salary salary = new Salary();
@@ -30,7 +38,7 @@ public class SalaryController {
         salary.setBonus(200.0);
         salary.setCreatedDate(new Date());
         salary.setIsActive(true);
-        salary.setAllowances(100.0);
+        salary.setAllowances(100);
         salary.setOverTimeAmount(50.0);
         salary.setDeductions(100.00);
         salary.setCurrency("OMR");
